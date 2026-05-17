@@ -100,7 +100,7 @@ export default function AdminBookingsClient({ bookings: initial, rooms, adminId 
       if (error) throw error;
       
       const newRoom = rooms.find(r => r.id === newRoomId);
-      setBookings(bookings.map(b => b.id === bookingId ? { ...b, room_id: newRoomId, room: newRoom as any } : b));
+      setBookings(bookings.map(b => b.id === bookingId ? { ...b, room_id: newRoomId, room: newRoom as unknown as RoomOption } : b));
       setChangingRoom(null);
       setNewRoomId('');
       toast.success('Room reassigned successfully!');

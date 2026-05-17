@@ -1,6 +1,6 @@
 import { createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
-import RoomsClient from './RoomsClient';
+import RoomsClient from '@/app/student/rooms/RoomsClient';
 
 export default async function RoomsPage() {
   const supabase = await createClient();

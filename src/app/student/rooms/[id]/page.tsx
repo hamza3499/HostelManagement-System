@@ -1,6 +1,6 @@
 import { createClient } from '@/lib/supabase/server';
 import { redirect, notFound } from 'next/navigation';
-import RoomDetailClient from './RoomDetailClient';
+import RoomDetailClient from '@/app/student/rooms/[id]/RoomDetailClient';
 
 export default async function RoomDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

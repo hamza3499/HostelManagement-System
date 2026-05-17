@@ -47,7 +47,7 @@ export default function Sidebar({ profile, counts = {} }: SidebarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const links = profile.role === 'admin' ? adminLinks : studentLinks;
 
-  const SidebarContent = () => (
+  const sidebarContent = (
     <div className="flex flex-col h-full bg-slate-950/80 backdrop-blur-3xl">
       {/* Logo */}
       <div className="p-6 border-b border-slate-900/60 relative overflow-hidden">
@@ -146,7 +146,7 @@ export default function Sidebar({ profile, counts = {} }: SidebarProps) {
     <>
       {/* Desktop Sidebar */}
       <aside className="hidden lg:flex flex-col fixed left-0 top-0 h-full border-r border-slate-900/60 z-40" style={{ width: 'var(--sidebar-width)' }}>
-        <SidebarContent />
+        {sidebarContent}
       </aside>
 
       {/* Mobile toggle */}
@@ -166,23 +166,22 @@ export default function Sidebar({ profile, counts = {} }: SidebarProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileOpen(false)}
-              className="lg:hidden fixed inset-0 bg-black/80 z-40"
+              className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
             />
             <motion.aside
-              initial={{ x: -280 }}
+              initial={{ x: '-100%' }}
               animate={{ x: 0 }}
-              exit={{ x: -280 }}
-              transition={{ type: 'spring', damping: 25 }}
-              className="lg:hidden fixed left-0 top-0 h-full z-50 border-r border-slate-900/60"
-              style={{ width: '260px' }}
+              exit={{ x: '-100%' }}
+              transition={{ type: 'spring', bounce: 0, duration: 0.4 }}
+              className="lg:hidden fixed left-0 top-0 h-full w-[280px] z-50 flex flex-col"
             >
               <button
                 onClick={() => setMobileOpen(false)}
-                className="absolute top-4 right-4 text-slate-400 hover:text-white"
+                className="absolute top-4 -right-12 p-2 bg-slate-900/80 text-white rounded-xl backdrop-blur-md"
               >
                 <X className="w-5 h-5" />
               </button>
-              <SidebarContent />
+              {sidebarContent}
             </motion.aside>
           </>
         )}

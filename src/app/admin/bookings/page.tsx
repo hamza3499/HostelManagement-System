@@ -1,6 +1,6 @@
 import { createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
-import AdminBookingsClient from './AdminBookingsClient';
+import AdminBookingsClient from '@/app/admin/bookings/AdminBookingsClient';
 
 export default async function AdminBookingsPage() {
   const supabase = await createClient();
