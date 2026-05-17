@@ -96,7 +96,7 @@ export default function StudentSettingsClient({ profile }: Props) {
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-500" />
                   <div className="relative">
                     <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 group-focus-within:text-blue-400 transition-colors" />
-                    <input {...register('full_name')} className="hms-input pl-12 h-14 text-base rounded-xl bg-slate-950/50 border-slate-800 focus:border-blue-500/50" />
+                    <input {...register('full_name')} className="hms-input !pl-12 h-14 text-base rounded-xl bg-slate-950/50 border-slate-800 focus:border-blue-500/50" />
                   </div>
                 </div>
                 {errors.full_name && <p className="text-red-400 text-xs mt-2 ml-1 font-medium">{errors.full_name.message}</p>}
@@ -106,7 +106,7 @@ export default function StudentSettingsClient({ profile }: Props) {
                 <label className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 ml-1">Email Address</label>
                 <div className="relative">
                   <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-600" />
-                  <input value={profile?.email || ''} disabled className="hms-input pl-12 h-14 text-base rounded-xl bg-slate-900/40 border-slate-800/50 text-slate-500 cursor-not-allowed" />
+                  <input value={profile?.email || ''} disabled className="hms-input !pl-12 h-14 text-base rounded-xl bg-slate-900/40 border-slate-800/50 text-slate-500 cursor-not-allowed" />
                 </div>
                 <p className="text-[10px] uppercase tracking-wider font-bold text-slate-600 mt-2 ml-1">Secure · Cannot be changed</p>
               </div>
@@ -117,7 +117,7 @@ export default function StudentSettingsClient({ profile }: Props) {
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-500" />
                   <div className="relative">
                     <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 group-focus-within:text-purple-400 transition-colors" />
-                    <input {...register('phone')} type="tel" placeholder="+92 300 0000000" className="hms-input pl-12 h-14 text-base rounded-xl bg-slate-950/50 border-slate-800 focus:border-purple-500/50" />
+                    <input {...register('phone')} type="tel" placeholder="+92 300 0000000" className="hms-input !pl-12 h-14 text-base rounded-xl bg-slate-950/50 border-slate-800 focus:border-purple-500/50" />
                   </div>
                 </div>
               </div>
